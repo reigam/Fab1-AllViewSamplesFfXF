@@ -13,12 +13,15 @@ module App =
         | IsFlyoutPresentedChanged of bool
         | ListViewSelectedItemChanged of (int * int)
         | StateChanged
+        | ChangeMyStyle
+        | ResetStyle
  
     /// The model from which the view is generated
     type Model =
         {   SelectedPage : (int * int)
             IsFlyoutPresented : bool
             StateChanged : bool 
+            MyStyle : MyStyle
         }
  
     /// Returns the initial state
@@ -26,6 +29,7 @@ module App =
         {   SelectedPage = (0, 0)
             IsFlyoutPresented = false
             StateChanged = false 
+            MyStyle = myStyle
         }, Cmd.none
  
     /// The function to update the view
@@ -37,6 +41,12 @@ module App =
             {model with SelectedPage = i; IsFlyoutPresented = false}, Cmd.none
         | StateChanged -> 
             { model with StateChanged = true }, Cmd.none
+        | ChangeMyStyle ->
+            if (model.MyStyle = myStyle)
+                then {model with MyStyle = noStyle}, Cmd.none
+            else {model with MyStyle = myStyle}, Cmd.none
+        | ResetStyle -> {model with MyStyle = myStyle}, Cmd.none
+            
  
     /// The view function giving updated content for the page
     let view (model: Model) dispatch =        
@@ -46,27 +56,48 @@ module App =
                 Page = 
                     View.ContentPage
                         (
-                            backgroundColor = Color.Red,
+                            backgroundColor = model.MyStyle.PageColor,
+                            padding = model.MyStyle.Padding,
                             content = 
-                                View.Label
-                                    (
-                                        text = "Welcome",
-                                        horizontalOptions = LayoutOptions.Center,
-                                        verticalOptions = LayoutOptions.Center,
-                                        backgroundColor = Color.Blue
-                                    )                        
-                    )            
+                                View.StackLayout
+                                    (                                        
+                                        horizontalOptions = model.MyStyle.Position,
+                                        verticalOptions = model.MyStyle.Position,
+                                        backgroundColor = model.MyStyle.LayoutColor,
+                                        padding = model.MyStyle.Padding,
+                                        children = [
+                                            View.Label
+                                                (
+                                                    text = "Welcome",
+                                                    horizontalOptions = model.MyStyle.Position,
+                                                    verticalOptions = model.MyStyle.Position,
+                                                    backgroundColor = model.MyStyle.ViewColor,
+                                                    padding = model.MyStyle.Padding
+                                                )        
+                                            View.Button
+                                                (
+                                                    text = "Toggle Style", 
+                                                    horizontalOptions = model.MyStyle.Position,
+                                                    verticalOptions = model.MyStyle.Position,
+                                                    backgroundColor = model.MyStyle.ViewColor,
+                                                    padding = model.MyStyle.Padding,
+                                                    command = fun () -> (dispatch ChangeMyStyle)
+                                                )
+                                        ]
+                                    )
+                            
+                        )            
             }
         ]
 
-        let pagesToNavigateName (p : list<SamplePage>) = p |> List.map (fun x -> View.TextCell(text = x.Name))
+        let pagesToNavigateName (p : list<SamplePage>) = p |> List.map (fun x -> View.TextCell(text = x.Name, textColor = Color.DarkGray))
         let activePage x = 
             let activeCategory =
                 match fst(x) with                
                 | 0 -> introductionPages
-                | 1 -> SamplePages.samplePages
-                | 2 -> SampleLayouts.sampleLayouts
-                | 3 -> SampleDisplays.sampleDisplays
+                | 1 -> SamplePages.samplePages model.MyStyle
+                | 2 -> SampleLayouts.sampleLayouts model.MyStyle
+                | 3 -> SampleDisplays.sampleDisplays model.MyStyle
                 | _ -> []
             activeCategory.Item(snd(x)).Page
         
@@ -82,19 +113,28 @@ module App =
                         View.StackLayout( children = [
                             View.ListViewGrouped(
                                 items = [ 
-                                    "Introduction Pages", View.TextCell("Introduction Pages"), pagesToNavigateName introductionPages
-                                    "Sample Pages", View.TextCell("Sample Pages"), pagesToNavigateName SamplePages.samplePages
-                                    "Sample Layouts", View.TextCell("Sample Layouts"), pagesToNavigateName SampleLayouts.sampleLayouts
-                                    "Sample Displays", View.TextCell("Sample Displays"), pagesToNavigateName SampleDisplays.sampleDisplays
+                                    "Introduction Pages", View.TextCell("Introduction Pages", textColor = Color.LightGray), (pagesToNavigateName introductionPages)
+                                    "Sample Pages", View.TextCell("Sample Pages", textColor = Color.LightGray), pagesToNavigateName (SamplePages.samplePages model.MyStyle)
+                                    "Sample Layouts", View.TextCell("Sample Layouts", textColor = Color.LightGray), pagesToNavigateName (SampleLayouts.sampleLayouts model.MyStyle)
+                                    "Sample Displays", View.TextCell("Sample Displays", textColor = Color.LightGray), pagesToNavigateName (SampleDisplays.sampleDisplays model.MyStyle)
                                 ], 
-                                itemSelected = (fun idx -> dispatch (ListViewSelectedItemChanged idx.Value))
+                                itemSelected = (fun idx -> dispatch (ListViewSelectedItemChanged idx.Value); dispatch (ResetStyle))
                             )
                         ])
                 ), 
             detail = View.NavigationPage
-                (   title = "details", pages = [
+                (   title = "details", 
+                    toolbarItems = [
+                        View.ToolbarItem
+                            (
+                                text = "toggle style",
+                                command = fun () -> (dispatch ChangeMyStyle)
+                            )
+                    ],
+                    pages = [
                         activePage model.SelectedPage
-                ] )
+                    ] 
+                )
         )
     
 type App () as app =

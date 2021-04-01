@@ -7,11 +7,29 @@ open Xamarin.Forms
 open Helpers
 
 module SampleLayouts =
-    let sampleLayouts = [
+    let sampleLayouts (style: MyStyle) = [
         {   Name = "ContentView";  
             Page = 
-                View.ContentPage(title ="ContentView", content = 
-                    View.ContentView(View.Label("ContentView"))
+                View.ContentPage(                    
+                    backgroundColor = style.PageColor,
+                    title ="ContentView",
+                    content = 
+                        View.ContentView
+                            (
+                                horizontalOptions = style.Position,
+                                verticalOptions = style.Position,
+                                backgroundColor = style.LayoutColor,
+                                padding = style.Padding,
+                                content = 
+                                    View.Label
+                                        (
+                                            horizontalOptions = style.Position,
+                                            verticalOptions = style.Position,
+                                            backgroundColor = style.ViewColor,
+                                            padding = style.Padding,
+                                            text = "ContentView"
+                                        )
+                            )
                 )
         }
         {   Name = "Frame"; 

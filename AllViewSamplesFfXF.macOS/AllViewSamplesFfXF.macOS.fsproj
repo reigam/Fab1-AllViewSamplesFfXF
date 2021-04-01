@@ -82,6 +82,18 @@
     <Compile Include="AppDelegate.fs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Fabulous">
+      <HintPath>..\packages\Fabulous.1.0.0\lib\netstandard2.0\Fabulous.dll</HintPath>
+    </Reference>
+    <Reference Include="Fabulous.LiveUpdate">
+      <HintPath>..\packages\Fabulous.LiveUpdate.1.0.0\lib\netstandard2.0\Fabulous.LiveUpdate.dll</HintPath>
+    </Reference>
+    <Reference Include="Fabulous.XamarinForms">
+      <HintPath>..\packages\Fabulous.XamarinForms.1.0.0\lib\netstandard2.0\Fabulous.XamarinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Fabulous.XamarinForms.LiveUpdate">
+      <HintPath>..\packages\Fabulous.XamarinForms.LiveUpdate.1.0.0\lib\netstandard2.0\Fabulous.XamarinForms.LiveUpdate.dll</HintPath>
+    </Reference>
     <Reference Include="FSharp.Core">
       <Private>True</Private>
     </Reference>
@@ -91,6 +103,9 @@
     </Reference>
     <Reference Include="OpenTK" />
     <Reference Include="System" />
+    <Reference Include="System.Buffers">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Numerics" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics.Vectors" />

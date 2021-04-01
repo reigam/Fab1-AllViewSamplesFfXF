@@ -7,7 +7,7 @@ open Xamarin.Forms
 open Helpers
 
 module SampleDisplays =
-    let sampleDisplays = [
+    let sampleDisplays (style: MyStyle) = [
         {   Name = "CarouselView";  
             Page = 
                 View.ContentPage(title ="CarouselView", content = 
