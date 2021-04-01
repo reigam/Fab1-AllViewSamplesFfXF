@@ -41,13 +41,32 @@ module App =
     /// The view function giving updated content for the page
     let view (model: Model) dispatch =        
 
+        let introductionPages = [
+            {   Name = "Introduction";
+                Page = 
+                    View.ContentPage
+                        (
+                            backgroundColor = Color.Red,
+                            content = 
+                                View.Label
+                                    (
+                                        text = "Welcome",
+                                        horizontalOptions = LayoutOptions.Center,
+                                        verticalOptions = LayoutOptions.Center,
+                                        backgroundColor = Color.Blue
+                                    )                        
+                    )            
+            }
+        ]
+
         let pagesToNavigateName (p : list<SamplePage>) = p |> List.map (fun x -> View.TextCell(text = x.Name))
         let activePage x = 
             let activeCategory =
-                match fst(x) with
-                | 0 -> SamplePages.samplePages
-                | 1 -> SampleLayouts.sampleLayouts
-                | 2 -> SampleDisplays.sampleDisplays
+                match fst(x) with                
+                | 0 -> introductionPages
+                | 1 -> SamplePages.samplePages
+                | 2 -> SampleLayouts.sampleLayouts
+                | 3 -> SampleDisplays.sampleDisplays
                 | _ -> []
             activeCategory.Item(snd(x)).Page
         
@@ -61,12 +80,12 @@ module App =
                 (   title ="flyoutPage",    
                     content = 
                         View.StackLayout( children = [
-                            View.Label("Chose View")
                             View.ListViewGrouped(
                                 items = [ 
-                                    "Sample Pages", View.TextCell("Sample Pages"), (pagesToNavigateName SamplePages.samplePages)
-                                    "Sample Layouts", View.TextCell("Sample Layouts"), (pagesToNavigateName SampleLayouts.sampleLayouts) 
-                                    "Sample Displays", View.TextCell("Sample Displays"), (pagesToNavigateName SampleDisplays.sampleDisplays) 
+                                    "Introduction Pages", View.TextCell("Introduction Pages"), pagesToNavigateName introductionPages
+                                    "Sample Pages", View.TextCell("Sample Pages"), pagesToNavigateName SamplePages.samplePages
+                                    "Sample Layouts", View.TextCell("Sample Layouts"), pagesToNavigateName SampleLayouts.sampleLayouts
+                                    "Sample Displays", View.TextCell("Sample Displays"), pagesToNavigateName SampleDisplays.sampleDisplays
                                 ], 
                                 itemSelected = (fun idx -> dispatch (ListViewSelectedItemChanged idx.Value))
                             )
