@@ -12,6 +12,7 @@ module Helpers =
         LayoutColor: Color
         ViewColor: Color
         CellColor: Color
+        ButtonColor: Color
         Position: LayoutOptions
         Padding: Thickness
     }
@@ -21,6 +22,7 @@ module Helpers =
         LayoutColor = Color.Blue
         ViewColor = Color.AntiqueWhite
         CellColor = Color.Green
+        ButtonColor = Color.White
         Position = LayoutOptions.Center
         Padding = Thickness 20.
     }
@@ -30,6 +32,7 @@ module Helpers =
            LayoutColor = Color.White
            ViewColor = Color.White
            CellColor = Color.White
+           ButtonColor = Color.White
            Position = LayoutOptions.Start
            Padding = Thickness 0.
        }

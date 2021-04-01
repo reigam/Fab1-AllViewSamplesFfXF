@@ -79,7 +79,7 @@ module App =
                                                     text = "Toggle Style", 
                                                     horizontalOptions = model.MyStyle.Position,
                                                     verticalOptions = model.MyStyle.Position,
-                                                    backgroundColor = model.MyStyle.ViewColor,
+                                                    backgroundColor = model.MyStyle.ButtonColor,
                                                     padding = model.MyStyle.Padding,
                                                     command = fun () -> (dispatch ChangeMyStyle)
                                                 )
