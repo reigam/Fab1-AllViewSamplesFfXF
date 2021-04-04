@@ -68,21 +68,21 @@ module App =
                                         children = [
                                             View.Label
                                                 (
-                                                    text = "Welcome",
+                                                    text = "Navigation Page",
                                                     horizontalOptions = model.MyStyle.Position,
                                                     verticalOptions = model.MyStyle.Position,
                                                     backgroundColor = model.MyStyle.ViewColor,
                                                     padding = model.MyStyle.Padding
                                                 )        
-                                            View.Button
-                                                (
-                                                    text = "Toggle Style", 
-                                                    horizontalOptions = model.MyStyle.Position,
-                                                    verticalOptions = model.MyStyle.Position,
-                                                    backgroundColor = model.MyStyle.ButtonColor,
-                                                    padding = model.MyStyle.Padding,
-                                                    command = fun () -> (dispatch ChangeMyStyle)
-                                                )
+                                            //View.Button
+                                            //    (
+                                            //        text = "Toggle Style", 
+                                            //        horizontalOptions = model.MyStyle.Position,
+                                            //        verticalOptions = model.MyStyle.Position,
+                                            //        backgroundColor = model.MyStyle.ButtonColor,
+                                            //        padding = model.MyStyle.Padding,
+                                            //        command = fun () -> (dispatch ChangeMyStyle)
+                                            //    )
                                         ]
                                     )
                             
