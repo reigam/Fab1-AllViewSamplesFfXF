@@ -9,6 +9,7 @@ open Helpers
 module SampleLayouts =
     let sampleLayouts (style: MyStyle) = [
         {   Name = "ContentView";  
+            SampleType = "basic";
             Page = 
                 View.ContentPage(                    
                     backgroundColor = style.PageColor,
@@ -33,6 +34,7 @@ module SampleLayouts =
                 )
         }
         {   Name = "Frame"; 
+            SampleType = "basic";
             Page = 
                 View.ContentPage(
                     backgroundColor = style.PageColor,
@@ -58,7 +60,8 @@ module SampleLayouts =
                             )      
                     )
         }
-        {   Name = "ScrollView"; 
+        {   Name = "ScrollView";
+            SampleType = "basic";
             Page = 
                 View.ContentPage(
                     backgroundColor = style.PageColor,
@@ -89,6 +92,7 @@ module SampleLayouts =
                 )
         }
         {   Name = "StackLayout"; 
+            SampleType = "basic";
             Page = 
                 View.ContentPage(
                     backgroundColor = style.PageColor,
@@ -129,6 +133,7 @@ module SampleLayouts =
                 )
         }
         {   Name = "Grid"; 
+            SampleType = "basic";
             Page = 
                 View.ContentPage(
                     backgroundColor = style.PageColor,
@@ -186,6 +191,7 @@ module SampleLayouts =
                 )
         }
         {   Name = "RelativeLayout"; 
+            SampleType = "basic";
             Page = 
                 View.ContentPage(
                     backgroundColor = style.PageColor,
@@ -217,43 +223,45 @@ module SampleLayouts =
                 )
         }
         {   Name = "AbsoluteLayout"; 
-                   Page = 
-                       View.ContentPage(
-                            backgroundColor = style.PageColor,
-                            title ="AbsoluteLayout", content = 
-                                View.AbsoluteLayout
-                                    (  
-                                        //horizontalOptions = style.Position,   ///this would break the Layout
-                                        //verticalOptions = style.Position,     ///this would break the Layout
-                                        backgroundColor = style.LayoutColor,
+            SampleType = "basic";
+            Page = 
+                View.ContentPage(
+                    backgroundColor = style.PageColor,
+                    title ="AbsoluteLayout", content = 
+                        View.AbsoluteLayout
+                            (  
+                                //horizontalOptions = style.Position,   ///this would break the Layout
+                                //verticalOptions = style.Position,     ///this would break the Layout
+                                backgroundColor = style.LayoutColor,
+                                padding = style.Padding,  
+                                children = [
+                                    View.Label(
+                                        horizontalOptions = style.Position,
+                                        verticalOptions = style.Position,
+                                        backgroundColor = style.ViewColor,
                                         padding = style.Padding,  
-                                        children = [
-                                            View.Label(
-                                                horizontalOptions = style.Position,
-                                                verticalOptions = style.Position,
-                                                backgroundColor = style.ViewColor,
-                                                padding = style.Padding,  
-                                                text = "Label in an AbsoluteLayout\nPosition: Top Left"
-                                            ).LayoutFlags(AbsoluteLayoutFlags.PositionProportional).LayoutBounds(Rectangle(0.0, 0.0, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize))
-                                            View.Label(
-                                                horizontalOptions = style.Position,
-                                                verticalOptions = style.Position,
-                                                backgroundColor = style.ViewColor,
-                                                padding = style.Padding,  
-                                                text = "Label in an AbsoluteLayout\nPosition: Centered"
-                                            ).LayoutFlags(AbsoluteLayoutFlags.PositionProportional).LayoutBounds(Rectangle(0.5, 0.5, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize))
-                                            View.Label(
-                                                horizontalOptions = style.Position,
-                                                verticalOptions = style.Position,
-                                                backgroundColor = style.ViewColor,
-                                                padding = style.Padding,  
-                                                text = "Label in an AbsoluteLayout\nPosition: Bottom Right"
-                                            ).LayoutFlags(AbsoluteLayoutFlags.PositionProportional).LayoutBounds(Rectangle(1.0, 1.0, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize))
-                                        ]
-                                    )
-                        )
+                                        text = "Label in an AbsoluteLayout\nPosition: Top Left"
+                                    ).LayoutFlags(AbsoluteLayoutFlags.PositionProportional).LayoutBounds(Rectangle(0.0, 0.0, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize))
+                                    View.Label(
+                                        horizontalOptions = style.Position,
+                                        verticalOptions = style.Position,
+                                        backgroundColor = style.ViewColor,
+                                        padding = style.Padding,  
+                                        text = "Label in an AbsoluteLayout\nPosition: Centered"
+                                    ).LayoutFlags(AbsoluteLayoutFlags.PositionProportional).LayoutBounds(Rectangle(0.5, 0.5, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize))
+                                    View.Label(
+                                        horizontalOptions = style.Position,
+                                        verticalOptions = style.Position,
+                                        backgroundColor = style.ViewColor,
+                                        padding = style.Padding,  
+                                        text = "Label in an AbsoluteLayout\nPosition: Bottom Right"
+                                    ).LayoutFlags(AbsoluteLayoutFlags.PositionProportional).LayoutBounds(Rectangle(1.0, 1.0, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize))
+                                ]
+                            )
+                )
                }
         {   Name = "FlexLayout"; 
+            SampleType = "basic";
             Page = 
                 View.ContentPage(
                     backgroundColor = style.PageColor,

@@ -9,6 +9,7 @@ open Helpers
 module SamplePages =
     let samplePages (style: MyStyle) = [
         {   Name = "ContentPage";
+            SampleType = "basic";
             Page = 
                 View.ContentPage(
                     backgroundColor = style.PageColor,
@@ -29,7 +30,8 @@ module SamplePages =
     
         // Sample Navigation Page: see main program 
 
-        {   Name = "TabbedPage";
+        {   Name = "TabbedPage";            
+            SampleType = "basic";
             Page = 
                 View.TabbedPage(
                     backgroundColor = style.PageColor,
@@ -56,6 +58,7 @@ module SamplePages =
                     ] )
         }
         {   Name = "CarouselPage";
+            SampleType = "basic";
             Page = 
                 View.CarouselPage(
                     backgroundColor = style.PageColor,

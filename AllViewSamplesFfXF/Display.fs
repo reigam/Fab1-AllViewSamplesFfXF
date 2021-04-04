@@ -9,52 +9,121 @@ open Helpers
 module SampleDisplays =
     let sampleDisplays (style: MyStyle) = [
         {   Name = "CarouselView";  
+            SampleType = "basic";
             Page = 
-                View.ContentPage(title ="CarouselView", content = 
-                    View.CarouselView(items = [
-                        View.Label(text="First Carousel View") 
-                        View.Label(text="Second Carousel View")
-                        View.Label(text="Third Carousel View")
-                        View.Label(text="Fourth Carousel View")
-                        View.Label(text="Fifth Carousel View") 
-                    ] )
+                View.ContentPage(
+                    title ="CarouselView", 
+                        content = 
+                            View.CarouselView(items = [
+                                View.Label
+                                    (
+                                        horizontalOptions = style.Position,
+                                        verticalOptions = style.Position,
+                                        backgroundColor = style.ViewColor,
+                                        padding = style.Padding,  
+                                        text = ("First CarouselView")
+                                    )
+                                View.Label
+                                    (
+                                        horizontalOptions = style.Position,
+                                        verticalOptions = style.Position,
+                                        backgroundColor = style.ViewColor,
+                                        padding = style.Padding,  
+                                        text = ("Second CarouselView")
+                                    )
+                                View.Label
+                                    (
+                                        horizontalOptions = style.Position,
+                                        verticalOptions = style.Position,
+                                        backgroundColor = style.ViewColor,
+                                        padding = style.Padding,  
+                                        text = ("Third CarouselView")
+                                    )
+                            ] )
                 )
         }
         {   Name = "CollectionView";  
+            SampleType = "basic";
             Page = 
-                View.ContentPage(title ="CollectionView", content = 
-                    View.CollectionView(items = [
-                        View.Label(text = "First Collection View") 
-                        View.Label(text = "Second Collection View")
-                        View.Label(text = "Third Collection View")
-                        View.Label(text = "Fourth Collection View")
-                        View.Label(text = "Fifth Collection View")
-                    ] )
+                View.ContentPage(
+                    title ="CollectionView", 
+                        content = 
+                            View.CarouselView(items = [
+                                View.Label
+                                    (
+                                        horizontalOptions = style.Position,
+                                        verticalOptions = style.Position,
+                                        backgroundColor = style.ViewColor,
+                                        padding = style.Padding,  
+                                        text = ("First CollectionView")
+                                    )
+                                View.Label
+                                    (
+                                        horizontalOptions = style.Position,
+                                        verticalOptions = style.Position,
+                                        backgroundColor = style.ViewColor,
+                                        padding = style.Padding,  
+                                        text = ("Second CollectionView")
+                                    )
+                                View.Label
+                                    (
+                                        horizontalOptions = style.Position,
+                                        verticalOptions = style.Position,
+                                        backgroundColor = style.ViewColor,
+                                        padding = style.Padding,  
+                                        text = ("Third CollectionView")
+                                    )
+                            ] )
                 )
         }        
         {   Name = "IndicatorView";  
+            SampleType = "basic";
             Page = 
                 let indicatorRef = ViewRef<IndicatorView>()
-                View.ContentPage( title = "IndicatorView", content = 
-                    View.StackLayout( children = [
-                        View.IndicatorView( ref = indicatorRef, indicatorColor = Color.Red, selectedIndicatorColor = Color.Blue, padding = Thickness(20.), indicatorsShape = IndicatorShape.Square)
-                    
-                        View.CarouselView
-                            (indicatorView = indicatorRef, items = [
-                                for i = 0 to 15 do
-                                    yield View.StackLayout( children = [
-                                        View.Label
+                View.ContentPage( 
+                    backgroundColor = style.PageColor,
+                    title = "IndicatorView", 
+                        content = 
+                            View.StackLayout
+                                ( 
+                                    children = [
+                                        View.IndicatorView
                                             (
-                                                horizontalOptions = LayoutOptions.Center,
-                                                verticalOptions = LayoutOptions.CenterAndExpand,
-                                                text = sprintf "Person %i" i
+                                                ref = indicatorRef, 
+                                                indicatorColor = Color.Red, 
+                                                selectedIndicatorColor = Color.Blue, 
+                                                padding = style.Padding,  
+                                                indicatorsShape = IndicatorShape.Square
+                                            )
+                    
+                                        View.CarouselView
+                                            (
+                                                indicatorView = indicatorRef, 
+                                                items = [
+                                                    for i = 0 to 15 do
+                                                        yield View.StackLayout
+                                                            (   
+                                                                horizontalOptions = style.Position,
+                                                                verticalOptions = style.Position,
+                                                                backgroundColor = style.LayoutColor,
+                                                                padding = style.Padding,  
+                                                                children = [
+                                                                    View.Label
+                                                                        (
+                                                                            horizontalOptions = style.Position,
+                                                                            verticalOptions = style.Position,
+                                                                            backgroundColor = style.ViewColor,
+                                                                            padding = style.Padding,  
+                                                                            text = sprintf "CarouselView %i" i
+                                                                        )
+                                                            ] )
+                                                ]    
                                             )
                                     ] )
-                            ] )
-                    ] )
                 )
         }
         {   Name = "ListView";  
+            SampleType = "basic";
             Page = 
                 View.TabbedPage
                     (
@@ -78,6 +147,7 @@ module SampleDisplays =
                     )
         }
         {   Name = "Picker";  
+            SampleType = "basic";
             Page = 
                 let pickerItems =
                     [  ("Aqua", Color.Aqua); ("Black", Color.Black);
@@ -102,6 +172,7 @@ module SampleDisplays =
                 )
         }
         {   Name = "TableView";  
+            SampleType = "basic";
             Page = 
                 View.ContentPage(title ="TableView", content = 
                     View.TableView( root = 

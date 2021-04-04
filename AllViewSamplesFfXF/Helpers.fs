@@ -22,7 +22,7 @@ module Helpers =
         LayoutColor = Color.Blue
         ViewColor = Color.AntiqueWhite
         CellColor = Color.Green
-        ButtonColor = Color.White
+        ButtonColor = Color.Gray
         Position = LayoutOptions.Center
         Padding = Thickness 20.
     }
@@ -40,5 +40,6 @@ module Helpers =
     
     type SamplePage = {
         Name : string
+        SampleType : string
         Page : ViewElement
     }

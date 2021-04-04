@@ -53,12 +53,21 @@ module App =
 
         let introductionPages = [
             {   Name = "Introduction";
+                SampleType = "basic";
                 Page = 
                     View.ContentPage
                         (
                             backgroundColor = model.MyStyle.PageColor,
                             padding = model.MyStyle.Padding,
                             content = 
+                                //View.Label
+                                //    (
+                                //        horizontalOptions = model.MyStyle.Position,
+                                //        verticalOptions = model.MyStyle.Position,
+                                //        backgroundColor = model.MyStyle.ViewColor,
+                                //        padding = model.MyStyle.Padding,
+                                //        text = "NavigationPage"
+                                //    )
                                 View.StackLayout
                                     (                                        
                                         horizontalOptions = model.MyStyle.Position,
@@ -101,7 +110,6 @@ module App =
                 | _ -> []
             activeCategory.Item(snd(x)).Page
         
-
         View.FlyoutPage(   
             flyoutLayoutBehavior = FlyoutLayoutBehavior.Default,
             isPresented = model.IsFlyoutPresented,
@@ -110,17 +118,31 @@ module App =
             flyout = View.ContentPage
                 (   title ="flyoutPage",    
                     content = 
-                        View.StackLayout( children = [
-                            View.ListViewGrouped(
-                                items = [ 
-                                    "Introduction Pages", View.TextCell("Introduction Pages", textColor = Color.LightGray), (pagesToNavigateName introductionPages)
-                                    "Sample Pages", View.TextCell("Sample Pages", textColor = Color.LightGray), pagesToNavigateName (SamplePages.samplePages model.MyStyle)
-                                    "Sample Layouts", View.TextCell("Sample Layouts", textColor = Color.LightGray), pagesToNavigateName (SampleLayouts.sampleLayouts model.MyStyle)
-                                    "Sample Displays", View.TextCell("Sample Displays", textColor = Color.LightGray), pagesToNavigateName (SampleDisplays.sampleDisplays model.MyStyle)
-                                ], 
-                                itemSelected = (fun idx -> dispatch (ListViewSelectedItemChanged idx.Value); dispatch (ResetStyle))
+                        View.Grid
+                            (
+                                rowdefs = [
+                                    Dimension.Auto
+                                ],
+                                coldefs = [
+                                    Dimension.Auto
+                                    Dimension.Auto
+                                    Dimension.Star
+                                ],
+                                children = [
+                                    View.Label("basic").Column(0)
+                                    View.Switch(isToggled = false).Column(1)
+                                    View.Label("advanced samples").Column(2)
+                                    View.ListViewGrouped(
+                                        items = [                                    
+                                            "Introduction Pages", View.TextCell("Introduction Pages", textColor = Color.LightGray), (pagesToNavigateName introductionPages)
+                                            "Sample Pages", View.TextCell("Sample Pages", textColor = Color.LightGray), pagesToNavigateName (SamplePages.samplePages model.MyStyle)
+                                            "Sample Layouts", View.TextCell("Sample Layouts", textColor = Color.LightGray), pagesToNavigateName (SampleLayouts.sampleLayouts model.MyStyle)
+                                            "Sample Displays", View.TextCell("Sample Displays", textColor = Color.LightGray), pagesToNavigateName (SampleDisplays.sampleDisplays model.MyStyle)
+                                        ], 
+                                        itemSelected = (fun idx -> dispatch (ListViewSelectedItemChanged idx.Value); dispatch (ResetStyle))
+                                    ).Row(1).ColumnSpan(3)
+                                ]
                             )
-                        ])
                 ), 
             detail = View.NavigationPage
                 (   title = "details", 
