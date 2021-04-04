@@ -11,69 +11,83 @@ module SampleDisplays =
         {   Name = "CarouselView";  
             SampleType = "basic";
             Page = 
-                View.ContentPage(
-                    title ="CarouselView", 
+                View.ContentPage(                    
+                    backgroundColor = style.PageColor,
+                    title ="CarouselView",                         
                         content = 
-                            View.CarouselView(items = [
-                                View.Label
-                                    (
-                                        horizontalOptions = style.Position,
-                                        verticalOptions = style.Position,
-                                        backgroundColor = style.ViewColor,
-                                        padding = style.Padding,  
-                                        text = ("First CarouselView")
-                                    )
-                                View.Label
-                                    (
-                                        horizontalOptions = style.Position,
-                                        verticalOptions = style.Position,
-                                        backgroundColor = style.ViewColor2,
-                                        padding = style.Padding,  
-                                        text = ("Second CarouselView")
-                                    )
-                                View.Label
-                                    (
-                                        horizontalOptions = style.Position,
-                                        verticalOptions = style.Position,
-                                        backgroundColor = style.ViewColor3,
-                                        padding = style.Padding,  
-                                        text = ("Third CarouselView")
-                                    )
-                            ] )
+                            View.CarouselView
+                                (
+                                    horizontalOptions = style.Position,
+                                    verticalOptions = style.Position,
+                                    backgroundColor = style.LayoutColor,
+                                    items = [
+                                        View.Label
+                                            (
+                                                horizontalOptions = style.Position,
+                                                verticalOptions = style.Position,
+                                                backgroundColor = style.ViewColor,
+                                                padding = style.Padding,  
+                                                text = ("First CarouselView")
+                                            )
+                                        View.Label
+                                            (
+                                                horizontalOptions = style.Position,
+                                                verticalOptions = style.Position,
+                                                backgroundColor = style.ViewColor2,
+                                                padding = style.Padding,  
+                                                text = ("Second CarouselView")
+                                            )
+                                        View.Label
+                                            (
+                                                horizontalOptions = style.Position,
+                                                verticalOptions = style.Position,
+                                                backgroundColor = style.ViewColor3,
+                                                padding = style.Padding,  
+                                                text = ("Third CarouselView")
+                                            )
+                                    ] 
+                                )
                 )
         }
         {   Name = "CollectionView";  
             SampleType = "basic";
             Page = 
-                View.ContentPage(
+                View.ContentPage(                    
+                    backgroundColor = style.PageColor,
                     title ="CollectionView", 
                         content = 
-                            View.CollectionView(items = [
-                                View.Label
-                                    (
-                                        horizontalOptions = style.Position,
-                                        verticalOptions = style.Position,
-                                        backgroundColor = style.ViewColor,
-                                        padding = style.Padding,  
-                                        text = ("First CollectionView")
-                                    )
-                                View.Label
-                                    (
-                                        horizontalOptions = style.Position,
-                                        verticalOptions = style.Position,
-                                        backgroundColor = style.ViewColor2,
-                                        padding = style.Padding,  
-                                        text = ("Second CollectionView")
-                                    )
-                                View.Label
-                                    (
-                                        horizontalOptions = style.Position,
-                                        verticalOptions = style.Position,
-                                        backgroundColor = style.ViewColor3,
-                                        padding = style.Padding,  
-                                        text = ("Third CollectionView")
-                                    )
-                            ] )
+                            View.CollectionView
+                                (
+                                    horizontalOptions = style.Position,
+                                    verticalOptions = style.Position,
+                                    backgroundColor = style.LayoutColor,
+                                    items = [
+                                        View.Label
+                                            (
+                                                horizontalOptions = style.Position,
+                                                verticalOptions = style.Position,
+                                                backgroundColor = style.ViewColor,
+                                                padding = style.Padding,  
+                                                text = ("First CollectionView")
+                                            )
+                                        View.Label
+                                            (
+                                                horizontalOptions = style.Position,
+                                                verticalOptions = style.Position,
+                                                backgroundColor = style.ViewColor2,
+                                                padding = style.Padding,  
+                                                text = ("Second CollectionView")
+                                            )
+                                        View.Label
+                                            (
+                                                horizontalOptions = style.Position,
+                                                verticalOptions = style.Position,
+                                                backgroundColor = style.ViewColor3,
+                                                padding = style.Padding,  
+                                                text = ("Third CollectionView")
+                                            )
+                                    ] 
+                                )
                 )
         }        
         
@@ -140,20 +154,34 @@ module SampleDisplays =
                     (
                         title ="ListView",
                         children = [
-                            View.ContentPage(title = "ListView", content = 
-                                View.ListView(items = [
-                                    View.TextCell "Ionide"
-                                    View.TextCell "Visual Studio"
-                                    View.TextCell "Emacs"
-                                    View.TextCell "Visual Studio Code"
-                                    View.TextCell "JetBrains Rider"
-                                ](*, itemSelected = (fun idx -> dispatch (ListViewSelectedItemChanged idx)) )*) ) )         
-                            View.ContentPage(title = "ListViewGrouped", content = 
-                                View.ListViewGrouped(items = [
-                                    "Group 1", View.TextCell "Group 1", [View.TextCell "Ionide"; View.TextCell "Visual Studio"; View.TextCell "Emacs"]
-                                    "Group 2", View.TextCell "Group 2", [View.TextCell "Visual Studio Code"; View.TextCell "Visual Studio"]                                     
+                            View.ContentPage(
+                                title = "ListView", 
+                                    content = 
+                                        View.ListView(items = [
+                                            View.TextCell "First ListView"; 
+                                            View.TextCell "Second ListView"; 
+                                            View.TextCell "Third ListView"
+                                        ](*, itemSelected = (fun idx -> dispatch (ListViewSelectedItemChanged idx)) )*) ) )         
+                            View.ContentPage(
+                                title = "ListViewGrouped", 
+                                content = 
+                                    View.ListViewGrouped(items = [
+                                        "Group 1", 
+                                        View.TextCell "Group 1", 
+                                        [
+                                            View.TextCell "First ListView"; 
+                                            View.TextCell "Second ListView"; 
+                                            View.TextCell "Third ListView"
+                                        ]
+                                        "Group 2", 
+                                        View.TextCell "Group 2", 
+                                        [
+                                            View.TextCell "Fourth ListView"; 
+                                            View.TextCell "Fifth ListView"; 
+                                            View.TextCell "Sixth ListView"
+                                        ]                                     
        
-                                ](*, itemSelected = (fun idx -> dispatch (ListViewSelectedItemChanged idx)) )*) ) )
+                                    ](*, itemSelected = (fun idx -> dispatch (ListViewSelectedItemChanged idx)) )*) ) )
                         ] 
                     )
         }
@@ -190,26 +218,34 @@ module SampleDisplays =
                         View.TableRoot( items = [
                             View.TableSection
                                 (
-                                    title = "Videos",
+                                    title = "TextCell",
                                     items = [
-                                        View.SwitchCell(on = true, text = "Luca 2008") 
-                                        View.SwitchCell(on = true, text = "Don 2010")
+                                        View.TextCell(text = "First TextCell") 
+                                        View.TextCell(text = "Second TextCell")
                                     ]
                                 )
                             View.TableSection
                                 (
-                                    title = "Books",
+                                    title = "ImageCell",
                                     items = [
-                                        View.SwitchCell(on = true, text = "Expert F#") 
-                                        View.SwitchCell(on = false, text = "Programming F#")
+                                        View.ImageCell(text = "First ImageCell", image = Image.ImagePath "icon.png") 
+                                        View.ImageCell(text = "Second ImageCell", image = Image.ImagePath "icon2.png") 
                                     ]
                                 )
                             View.TableSection
                                 (
-                                    title = "Contact",
+                                    title = "SwitchCell",
                                     items = [
-                                        View.EntryCell(label = "Email", placeholder = "foo@bar.com")
-                                        View.EntryCell(label = "Phone", placeholder = "+44 87654321")
+                                        View.SwitchCell(text = "First SwitchCell", isEnabled = false)
+                                        View.SwitchCell(text = "Second SwitchCell", isEnabled = true)
+                                    ]
+                                )
+                            View.TableSection
+                                (
+                                    title = "EntryCell",
+                                    items = [
+                                        View.EntryCell(label = "First EntryCell", placeholder = "enter text here")
+                                        View.EntryCell(label = "Second EntryCell", placeholder = "enter more text here")
                                     ]
                                 )
                         ] )

@@ -101,6 +101,7 @@
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Resources\AboutResources.txt" />
     <AndroidResource Include="Resources\drawable\icon.png" />
+    <AndroidResource Include="Resources\drawable\icon2.png" />
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
