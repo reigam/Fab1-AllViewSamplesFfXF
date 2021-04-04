@@ -27,7 +27,7 @@ module SampleDisplays =
                                     (
                                         horizontalOptions = style.Position,
                                         verticalOptions = style.Position,
-                                        backgroundColor = style.ViewColor,
+                                        backgroundColor = style.ViewColor2,
                                         padding = style.Padding,  
                                         text = ("Second CarouselView")
                                     )
@@ -35,7 +35,7 @@ module SampleDisplays =
                                     (
                                         horizontalOptions = style.Position,
                                         verticalOptions = style.Position,
-                                        backgroundColor = style.ViewColor,
+                                        backgroundColor = style.ViewColor3,
                                         padding = style.Padding,  
                                         text = ("Third CarouselView")
                                     )
@@ -48,7 +48,7 @@ module SampleDisplays =
                 View.ContentPage(
                     title ="CollectionView", 
                         content = 
-                            View.CarouselView(items = [
+                            View.CollectionView(items = [
                                 View.Label
                                     (
                                         horizontalOptions = style.Position,
@@ -61,7 +61,7 @@ module SampleDisplays =
                                     (
                                         horizontalOptions = style.Position,
                                         verticalOptions = style.Position,
-                                        backgroundColor = style.ViewColor,
+                                        backgroundColor = style.ViewColor2,
                                         padding = style.Padding,  
                                         text = ("Second CollectionView")
                                     )
@@ -69,57 +69,68 @@ module SampleDisplays =
                                     (
                                         horizontalOptions = style.Position,
                                         verticalOptions = style.Position,
-                                        backgroundColor = style.ViewColor,
+                                        backgroundColor = style.ViewColor3,
                                         padding = style.Padding,  
                                         text = ("Third CollectionView")
                                     )
                             ] )
                 )
         }        
+        
+        let indicatorRef = ViewRef<IndicatorView>()
         {   Name = "IndicatorView";  
             SampleType = "basic";
             Page = 
-                let indicatorRef = ViewRef<IndicatorView>()
                 View.ContentPage( 
                     backgroundColor = style.PageColor,
                     title = "IndicatorView", 
-                        content = 
-                            View.StackLayout
-                                ( 
-                                    children = [
-                                        View.IndicatorView
-                                            (
-                                                ref = indicatorRef, 
-                                                indicatorColor = Color.Red, 
-                                                selectedIndicatorColor = Color.Blue, 
-                                                padding = style.Padding,  
-                                                indicatorsShape = IndicatorShape.Square
-                                            )
-                    
-                                        View.CarouselView
-                                            (
-                                                indicatorView = indicatorRef, 
-                                                items = [
-                                                    for i = 0 to 15 do
-                                                        yield View.StackLayout
-                                                            (   
-                                                                horizontalOptions = style.Position,
-                                                                verticalOptions = style.Position,
-                                                                backgroundColor = style.LayoutColor,
-                                                                padding = style.Padding,  
-                                                                children = [
-                                                                    View.Label
-                                                                        (
-                                                                            horizontalOptions = style.Position,
-                                                                            verticalOptions = style.Position,
-                                                                            backgroundColor = style.ViewColor,
-                                                                            padding = style.Padding,  
-                                                                            text = sprintf "CarouselView %i" i
-                                                                        )
-                                                            ] )
-                                                ]    
-                                            )
-                                    ] )
+                    content = 
+                        View.StackLayout
+                            ( 
+                                children = [
+                                    View.IndicatorView
+                                        (   
+                                            horizontalOptions = style.Position,
+                                            verticalOptions = style.Position,
+                                            backgroundColor = style.LayoutColor,
+                                            padding = style.Padding,  
+                                            ref = indicatorRef, 
+                                            indicatorColor = Color.Red, 
+                                            selectedIndicatorColor = Color.Blue, 
+                                            indicatorsShape = IndicatorShape.Square
+                                        )                    
+                                    View.CarouselView
+                                        (
+                                            indicatorView = indicatorRef, 
+                                            items = [
+                                                View.Label
+                                                    (
+                                                        horizontalOptions = style.Position,
+                                                        verticalOptions = style.Position,
+                                                        backgroundColor = style.ViewColor,
+                                                        padding = style.Padding,  
+                                                        text = ("First CarouselView with IndicatorView")
+                                                    )
+                                                View.Label
+                                                    (
+                                                        horizontalOptions = style.Position,
+                                                        verticalOptions = style.Position,
+                                                        backgroundColor = style.ViewColor2,
+                                                        padding = style.Padding,  
+                                                        text = ("Second CarouselView with IndicatorView")
+                                                    )
+                                                View.Label
+                                                    (
+                                                        horizontalOptions = style.Position,
+                                                        verticalOptions = style.Position,
+                                                        backgroundColor = style.ViewColor3,
+                                                        padding = style.Padding,  
+                                                        text = ("Third CarouselView with IndicatorView")
+                                                    )
+
+                                            ]    
+                                        )
+                                ] )
                 )
         }
         {   Name = "ListView";  

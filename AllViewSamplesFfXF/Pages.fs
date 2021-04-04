@@ -50,7 +50,7 @@ module SamplePages =
                             (                                
                                 horizontalOptions = style.Position,
                                 verticalOptions = style.Position,
-                                backgroundColor = style.ViewColor,
+                                backgroundColor = style.ViewColor2,
                                 padding = style.Padding,
                                 text = "TabbedPage 2"
                             ) 
@@ -77,7 +77,7 @@ module SamplePages =
                             (
                                 horizontalOptions = style.Position,
                                 verticalOptions = style.Position,
-                                backgroundColor = style.ViewColor,
+                                backgroundColor = style.ViewColor2,
                                 padding = style.Padding,
                                 text = "carousel page 2"
                             )

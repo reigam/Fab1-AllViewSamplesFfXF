@@ -125,7 +125,7 @@ module SampleLayouts =
                                     (
                                         horizontalOptions = style.Position,
                                         verticalOptions = style.Position,
-                                        backgroundColor = style.ViewColor,
+                                        backgroundColor = style.ViewColor2,
                                         padding = style.Padding,  
                                         text = "Label in a StackLayout"
                                     )
@@ -214,7 +214,7 @@ module SampleLayouts =
                                     View.Label(
                                         horizontalOptions = style.Position,
                                         verticalOptions = style.Position,
-                                        backgroundColor = style.ViewColor,
+                                        backgroundColor = style.ViewColor2,
                                         padding = style.Padding,  
                                         text = "Label in a RelativeLayout"
                                     ).XConstraint(Constraint.RelativeToParent(fun parent -> parent.Width / 3.0))
@@ -245,14 +245,14 @@ module SampleLayouts =
                                     View.Label(
                                         horizontalOptions = style.Position,
                                         verticalOptions = style.Position,
-                                        backgroundColor = style.ViewColor,
+                                        backgroundColor = style.ViewColor2,
                                         padding = style.Padding,  
                                         text = "Label in an AbsoluteLayout\nPosition: Centered"
                                     ).LayoutFlags(AbsoluteLayoutFlags.PositionProportional).LayoutBounds(Rectangle(0.5, 0.5, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize))
                                     View.Label(
                                         horizontalOptions = style.Position,
                                         verticalOptions = style.Position,
-                                        backgroundColor = style.ViewColor,
+                                        backgroundColor = style.ViewColor3,
                                         padding = style.Padding,  
                                         text = "Label in an AbsoluteLayout\nPosition: Bottom Right"
                                     ).LayoutFlags(AbsoluteLayoutFlags.PositionProportional).LayoutBounds(Rectangle(1.0, 1.0, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize))
@@ -289,13 +289,13 @@ module SampleLayouts =
                                             verticalOptions = style.Position,
                                             backgroundColor = style.ButtonColor,
                                             padding = style.Padding,  
-                                            text = ("Label in a FlexLayout\nFlexDirection Column\n(no fucntion)")
+                                            text = ("Button in a FlexLayout\nFlexDirection Column\n(no fucntion)")
                                         )
                                     View.Label
                                         (
                                             horizontalOptions = style.Position,
                                             verticalOptions = style.Position,
-                                            backgroundColor = style.ViewColor,
+                                            backgroundColor = style.ViewColor2,
                                             padding = style.Padding,  
                                             text = ("Label in a FlexLayout\nFlexDirection Column")
                                         )
