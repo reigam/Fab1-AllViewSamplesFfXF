@@ -9,6 +9,7 @@
     <Compile Include="Helpers.fs" />
     <Compile Include="Edit.fs" />
     <Compile Include="Pages.fs" />
+    <Compile Include="Indicate.fs" />
     <Compile Include="Layouts.fs" />
     <Compile Include="Display.fs" />
     <Compile Include="AllViewSamplesFfXF.fs" />
