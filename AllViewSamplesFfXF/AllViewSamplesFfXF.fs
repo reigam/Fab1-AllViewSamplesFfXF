@@ -109,6 +109,7 @@ module App =
                 | 3 -> SampleDisplays.sampleDisplays model.MyStyle
                 | 4 -> SampleEdit.sampleEdit model.MyStyle
                 | 5 -> SampleIndicate.sampleIndicate model.MyStyle
+                | 6 -> SampleSetting.sampleSetting model.MyStyle
                 | _ -> []
             activeCategory.Item(snd(x)).Page
         
@@ -142,6 +143,7 @@ module App =
                                             "Sample Displays", View.TextCell("Sample Displays", textColor = Color.LightGray), pagesToNavigateName (SampleDisplays.sampleDisplays model.MyStyle)
                                             "Sample Edit", View.TextCell("Sample Edit", textColor = Color.LightGray), pagesToNavigateName (SampleEdit.sampleEdit model.MyStyle)
                                             "Sample Indicate", View.TextCell("Sample Indicate", textColor = Color.LightGray), pagesToNavigateName (SampleIndicate.sampleIndicate model.MyStyle)
+                                            "Sample Setting", View.TextCell("Sample Setting", textColor = Color.LightGray), pagesToNavigateName (SampleSetting.sampleSetting model.MyStyle)
                                         ], 
                                         itemSelected = (fun idx -> dispatch (ListViewSelectedItemChanged idx.Value); dispatch (ResetStyle))
                                     ).Row(1).ColumnSpan(3)
