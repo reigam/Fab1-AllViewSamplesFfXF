@@ -32,9 +32,7 @@ module SampleSetting =
                     title ="Slider",                         
                     content = 
                         View.Slider
-                            (
-                                //horizontalOptions = style.Position,
-                                //verticalOptions = style.Position,
+                            (   
                                 backgroundColor = style.ViewColor,
                                 minimumMaximum = (0.0, 10.0),
                                 value = 5.0

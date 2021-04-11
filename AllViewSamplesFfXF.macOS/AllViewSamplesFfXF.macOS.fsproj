@@ -83,16 +83,16 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Fabulous">
-      <HintPath>..\packages\Fabulous.1.0.0\lib\netstandard2.0\Fabulous.dll</HintPath>
+      <HintPath>..\packages\Fabulous.1.0.1\lib\netstandard2.0\Fabulous.dll</HintPath>
     </Reference>
     <Reference Include="Fabulous.LiveUpdate">
-      <HintPath>..\packages\Fabulous.LiveUpdate.1.0.0\lib\netstandard2.0\Fabulous.LiveUpdate.dll</HintPath>
+      <HintPath>..\packages\Fabulous.LiveUpdate.1.0.1\lib\netstandard2.0\Fabulous.LiveUpdate.dll</HintPath>
     </Reference>
     <Reference Include="Fabulous.XamarinForms">
-      <HintPath>..\packages\Fabulous.XamarinForms.1.0.0\lib\netstandard2.0\Fabulous.XamarinForms.dll</HintPath>
+      <HintPath>..\packages\Fabulous.XamarinForms.1.0.1\lib\netstandard2.0\Fabulous.XamarinForms.dll</HintPath>
     </Reference>
     <Reference Include="Fabulous.XamarinForms.LiveUpdate">
-      <HintPath>..\packages\Fabulous.XamarinForms.LiveUpdate.1.0.0\lib\netstandard2.0\Fabulous.XamarinForms.LiveUpdate.dll</HintPath>
+      <HintPath>..\packages\Fabulous.XamarinForms.LiveUpdate.1.0.1\lib\netstandard2.0\Fabulous.XamarinForms.LiveUpdate.dll</HintPath>
     </Reference>
     <Reference Include="FSharp.Core">
       <Private>True</Private>
@@ -125,18 +125,6 @@
       <HintPath>..\packages\Xamarin.Forms.5.0.0.2012\lib\Xamarin.Mac\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Mac" />
-    <Reference Include="Fabulous">
-      <HintPath>..\packages\Fabulous.0.61.0\lib\netstandard2.0\Fabulous.dll</HintPath>
-    </Reference>
-    <Reference Include="Fabulous.LiveUpdate">
-      <HintPath>..\packages\Fabulous.LiveUpdate.0.61.0\lib\netstandard2.0\Fabulous.LiveUpdate.dll</HintPath>
-    </Reference>
-    <Reference Include="Fabulous.XamarinForms">
-      <HintPath>..\packages\Fabulous.XamarinForms.0.61.0\lib\netstandard2.0\Fabulous.XamarinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Fabulous.XamarinForms.LiveUpdate">
-      <HintPath>..\packages\Fabulous.XamarinForms.LiveUpdate.0.61.0\lib\netstandard2.0\Fabulous.XamarinForms.LiveUpdate.dll</HintPath>
-    </Reference>
     <Reference Include="System.Buffers">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\netstandard2.0\System.Buffers.dll</HintPath>
     </Reference>
