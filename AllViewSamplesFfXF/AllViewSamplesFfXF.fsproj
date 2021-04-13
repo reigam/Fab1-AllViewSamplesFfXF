@@ -12,6 +12,7 @@
     <Compile Include="Indicate.fs" />
     <Compile Include="Setting.fs" />
     <Compile Include="Initiate.fs" />
+    <Compile Include="Present.fs" />
     <Compile Include="Layouts.fs" />
     <Compile Include="Display.fs" />
     <Compile Include="AllViewSamplesFfXF.fs" />

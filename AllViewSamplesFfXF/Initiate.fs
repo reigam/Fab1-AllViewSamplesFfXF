@@ -49,7 +49,7 @@ module SampleInitiate =
                 View.ContentPage(                    
                     backgroundColor = style.PageColor,
                     title ="RadioButton",                         
-                    content = 
+                    content =                         
                         View.StackLayout
                             (                                   
                                 horizontalOptions = style.Position,
@@ -183,42 +183,6 @@ module SampleInitiate =
                                                 )
                                         ]
                                     )
-
-
-                                //content = 
-                                //    View.Label( "SwipeContent" ),
-                                //leftItems =                                 
-                                //    View.SwipeItems
-                                //        (
-                                //            items = [
-                                //                View.SwipeItem
-                                //                    (
-                                //                        backgroundColor = style.ViewColor,
-                                //                        text = "Left SwipeItem 1"
-                                //                    )
-                                //                View.SwipeItem
-                                //                    (
-                                //                        backgroundColor = style.ViewColor2,
-                                //                        text = "Left SwipeItem 2"
-                                //                    )
-                                //            ]
-                                //        ),
-                                //rightItems =                                 
-                                //    View.SwipeItems
-                                //        (
-                                //            items = [
-                                //                View.SwipeItem
-                                //                    (
-                                //                        backgroundColor = style.ViewColor,
-                                //                        text = "Right SwipeItem 1"
-                                //                    )
-                                //                View.SwipeItem
-                                //                    (
-                                //                        backgroundColor = style.ViewColor2,
-                                //                        text = "Right SwipeItem 2"
-                                //                    )
-                                //            ]
-                                //        )
                             )
                 )
         }

@@ -111,6 +111,7 @@ module App =
                 | 5 -> SampleIndicate.sampleIndicate model.MyStyle
                 | 6 -> SampleSetting.sampleSetting model.MyStyle
                 | 7 -> SampleInitiate.sampleInitiate model.MyStyle
+                | 8 -> SamplePresent.samplePresent model.MyStyle
                 | _ -> []
             activeCategory.Item(snd(x)).Page
         
@@ -146,6 +147,7 @@ module App =
                                             "Sample Indicate", View.TextCell("Sample Indicate", textColor = Color.LightGray), pagesToNavigateName (SampleIndicate.sampleIndicate model.MyStyle)
                                             "Sample Setting", View.TextCell("Sample Setting", textColor = Color.LightGray), pagesToNavigateName (SampleSetting.sampleSetting model.MyStyle)
                                             "Sample Initiate", View.TextCell("Sample Initiate", textColor = Color.LightGray), pagesToNavigateName (SampleInitiate.sampleInitiate model.MyStyle)
+                                            "Sample Present", View.TextCell("Sample Present", textColor = Color.LightGray), pagesToNavigateName (SamplePresent.samplePresent model.MyStyle)
                                         ], 
                                         itemSelected = (fun idx -> dispatch (ListViewSelectedItemChanged idx.Value); dispatch (ResetStyle))
                                     ).Row(1).ColumnSpan(3)
