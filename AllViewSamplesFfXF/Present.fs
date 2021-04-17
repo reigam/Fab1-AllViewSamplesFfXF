@@ -6,6 +6,7 @@ open Fabulous.XamarinForms
 open Xamarin.Forms
 open Helpers
 
+
 module SamplePresent =
     let samplePresent (style: MyStyle) = [
         {   Name = "BoxView";  
@@ -128,89 +129,94 @@ module SamplePresent =
                             )
                 )
         }
-        //{   Name = "Sample2";  
-        //    SampleType = "basic";
-        //    Page = 
-        //        View.ContentPage(                    
-        //            backgroundColor = style.PageColor,
-        //            title ="Sample2",                         
-        //            content = 
-        //                View.Sample2
-        //                    (
-        //                        horizontalOptions = style.Position,
-        //                        verticalOptions = style.Position,
-        //                        backgroundColor = style.ViewColor,
-        //                        padding = style.Padding,
-        //                        text = "Sample2"
-        //                    )
-        //        )
-        //}
-        //{   Name = "Sample2";  
-        //    SampleType = "basic";
-        //    Page = 
-        //        View.ContentPage(                    
-        //            backgroundColor = style.PageColor,
-        //            title ="Sample2",                         
-        //            content = 
-        //                View.Sample2
-        //                    (
-        //                        horizontalOptions = style.Position,
-        //                        verticalOptions = style.Position,
-        //                        backgroundColor = style.ViewColor,
-        //                        padding = style.Padding,
-        //                        text = "Sample2"
-        //                    )
-        //        )
-        //}
-        //{   Name = "Sample2";  
-        //    SampleType = "basic";
-        //    Page = 
-        //        View.ContentPage(                    
-        //            backgroundColor = style.PageColor,
-        //            title ="Sample2",                         
-        //            content = 
-        //                View.Sample2
-        //                    (
-        //                        horizontalOptions = style.Position,
-        //                        verticalOptions = style.Position,
-        //                        backgroundColor = style.ViewColor,
-        //                        padding = style.Padding,
-        //                        text = "Sample2"
-        //                    )
-        //        )
-        //}
-        //{   Name = "Sample2";  
-        //    SampleType = "basic";
-        //    Page = 
-        //        View.ContentPage(                    
-        //            backgroundColor = style.PageColor,
-        //            title ="Sample2",                         
-        //            content = 
-        //                View.Sample2
-        //                    (
-        //                        horizontalOptions = style.Position,
-        //                        verticalOptions = style.Position,
-        //                        backgroundColor = style.ViewColor,
-        //                        padding = style.Padding,
-        //                        text = "Sample2"
-        //                    )
-        //        )
-        //}
-        //{   Name = "Sample2";  
-        //    SampleType = "basic";
-        //    Page = 
-        //        View.ContentPage(                    
-        //            backgroundColor = style.PageColor,
-        //            title ="Sample2",                         
-        //            content = 
-        //                View.Sample2
-        //                    (
-        //                        horizontalOptions = style.Position,
-        //                        verticalOptions = style.Position,
-        //                        backgroundColor = style.ViewColor,
-        //                        padding = style.Padding,
-        //                        text = "Sample2"
-        //                    )
-        //        )
-        //}
+        {   Name = "Polygon";  
+            SampleType = "basic";
+            Page = 
+                View.ContentPage(                    
+                    backgroundColor = style.PageColor,
+                    title ="Polygon",                         
+                    content = 
+                        View.Polygon
+                            (
+                                horizontalOptions = style.Position,
+                                verticalOptions = style.Position,
+                                backgroundColor = style.ViewColor,                                
+                                points = Points.fromString "40,10 70,80 10,50",
+                                fill = View.SolidColorBrush(Color.Black),
+                                stroke = View.SolidColorBrush(Color.Orange),
+                                strokeThickness = 5.
+                                   
+                            )
+                )
+        }
+        {   Name = "Polyline";  
+            SampleType = "basic";
+            Page = 
+                View.ContentPage(                    
+                    backgroundColor = style.PageColor,
+                    title ="Polyline",                         
+                    content = 
+                        View.Polyline
+                            (
+                                horizontalOptions = style.Position,
+                                verticalOptions = style.Position,
+                                backgroundColor = style.ViewColor,
+                                points = Points.fromString "0,0 10,30, 15,0 18,60 23,30 35,30 40,0 43,60 48,30 100,30",
+                                stroke = View.SolidColorBrush(Color.Black),
+                                strokeThickness = 1.
+                            )
+                )
+        }
+        {   Name = "Rectangle";  
+            SampleType = "basic";
+            Page = 
+                View.ContentPage(                    
+                    backgroundColor = style.PageColor,
+                    title ="Rectangle",                         
+                    content = 
+                        View.Rectangle
+                            (
+                                horizontalOptions = style.Position,
+                                verticalOptions = style.Position,
+                                backgroundColor = style.ViewColor,                                
+                                fill = View.SolidColorBrush(Color.Black),
+                                stroke = View.SolidColorBrush(Color.Orange),
+                                strokeThickness = 5.,                                
+                                width = 150.,
+                                height = 50.
+                            )
+                )
+        }        
+        {   Name = "WebView";  
+            SampleType = "basic";
+            Page = 
+                View.ContentPage(                    
+                    backgroundColor = style.PageColor,
+                    title ="WebView",                         
+                    content = 
+                        View.WebView
+                            (
+                                backgroundColor = style.ViewColor,
+                                margin = style.Padding,                                
+                                source = UrlWebViewSource.op_Implicit "https://fsprojects.github.io/Fabulous/Fabulous.XamarinForms/"
+                            )
+                )
+        }
+        {   Name = "OpenGLView";  
+            SampleType = "basic";
+            Page = 
+                View.ContentPage(                    
+                    backgroundColor = style.PageColor,
+                    title ="OpenGLView",                         
+                    content = 
+                        View.OpenGLView
+                            (
+                                horizontalOptions = style.Position,
+                                verticalOptions = style.Position,
+                                backgroundColor = style.ViewColor,
+                                margin = style.Padding,
+                                hasRenderLoop = true                                                    
+                            )
+                )
+        }
     ]

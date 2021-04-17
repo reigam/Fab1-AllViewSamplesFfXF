@@ -20,7 +20,7 @@
     </NuGetPackageImportStamp>
     <SelectedDevice>Simulator</SelectedDevice>
     <ActiveDebugProfile>Simulator</ActiveDebugProfile>
-    <DefaultDevice>iPad Air (4th generation) iOS 14.4</DefaultDevice>
+    <DefaultDevice>iPhone 12 iOS 14.4</DefaultDevice>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
