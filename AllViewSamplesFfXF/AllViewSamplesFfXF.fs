@@ -21,7 +21,7 @@ module App =
         {   SelectedPage : (int * int)
             IsFlyoutPresented : bool
             StateChanged : bool 
-            MyStyle : MyStyle
+            MyStyle : MyStyle 
         }
  
     /// Returns the initial state
