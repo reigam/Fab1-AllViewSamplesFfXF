@@ -18,9 +18,9 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <SelectedDevice>Simulator</SelectedDevice>
-    <ActiveDebugProfile>Simulator</ActiveDebugProfile>
-    <DefaultDevice>iPhone 12 iOS 14.4</DefaultDevice>
+    <SelectedDevice>iPhone 12 iOS 14.5</SelectedDevice>
+    <ActiveDebugProfile>iPhone 12 iOS 14.5</ActiveDebugProfile>
+    <DefaultDevice>iPhone 12 iOS 14.5</DefaultDevice>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -127,19 +127,19 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Fabulous">
-      <HintPath>..\packages\Fabulous.1.0.1\lib\netstandard2.0\Fabulous.dll</HintPath>
+      <HintPath>..\packages\Fabulous.1.1.0\lib\netstandard2.0\Fabulous.dll</HintPath>
     </Reference>
     <Reference Include="Fabulous.LiveUpdate">
-      <HintPath>..\packages\Fabulous.LiveUpdate.1.0.1\lib\netstandard2.0\Fabulous.LiveUpdate.dll</HintPath>
+      <HintPath>..\packages\Fabulous.LiveUpdate.1.1.0\lib\netstandard2.0\Fabulous.LiveUpdate.dll</HintPath>
     </Reference>
     <Reference Include="Fabulous.XamarinForms">
-      <HintPath>..\packages\Fabulous.XamarinForms.1.0.1\lib\netstandard2.0\Fabulous.XamarinForms.dll</HintPath>
+      <HintPath>..\packages\Fabulous.XamarinForms.1.1.0\lib\netstandard2.0\Fabulous.XamarinForms.dll</HintPath>
     </Reference>
     <Reference Include="Fabulous.XamarinForms.LiveUpdate">
-      <HintPath>..\packages\Fabulous.XamarinForms.LiveUpdate.1.0.1\lib\netstandard2.0\Fabulous.XamarinForms.LiveUpdate.dll</HintPath>
+      <HintPath>..\packages\Fabulous.XamarinForms.LiveUpdate.1.1.0\lib\netstandard2.0\Fabulous.XamarinForms.LiveUpdate.dll</HintPath>
     </Reference>
     <Reference Include="FSharp.Core">
-      <Private>True</Private>
+      <HintPath>..\packages\FSharp.Core.5.0.1\lib\netstandard2.0\FSharp.Core.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="Newtonsoft.Json">
